@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//HOME
+Route::get('/', 'HomeController@index')->name('home');
+
+//COMICS usare il plurale e non indicare il metodo(index etc)
+Route::resource('/comics','ComicController');
