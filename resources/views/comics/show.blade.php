@@ -15,12 +15,14 @@
             <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
         </div>
         <div class="text-center">
-            <h4>{{$comic->price}}</h4>
+            <h4>{{$comic->price}} €</h4>
             <h4>{{$comic->series}}</h4>
         </div>
     </div>
 
 </div>
+
+<a href="{{ route('comics.index')}}">Back</a>
 
 </section>
 
