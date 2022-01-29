@@ -5,6 +5,13 @@
 <section class="container">
     <h1>Comics</h1>
 
+    @if(session('deleted'))
+    <div class="alert alert-success">
+        <strong>{{session('deleted')}}</strong>
+        Successfully Deleted
+    </div>
+    @endif
+
     <table class="table">
         <thead>
             <tr>
@@ -31,6 +38,16 @@
             <td><a href="{{ route('comics.show',$comic->id)}}">Show </a></button></td>
 
             <td><a href="{{ route('comics.edit', $comic->id)}}">Edit </a></button></td>
+
+            <td>
+                <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+
+                <input type="submit" class="btn" value="Delete">
+                </form>
+                
+            </td>
             @endforeach
         </tr>
         </tbody>
