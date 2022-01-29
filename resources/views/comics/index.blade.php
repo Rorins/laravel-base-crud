@@ -29,6 +29,8 @@
             <td>{{$comic->series}}</td>
         
             <td><a href="{{ route('comics.show',$comic->id)}}">Show </a></button></td>
+
+            <td><a href="{{ route('comics.edit', $comic->id)}}">Edit </a></button></td>
             @endforeach
         </tr>
         </tbody>
